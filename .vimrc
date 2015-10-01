@@ -12,7 +12,7 @@ filetype plugin on
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
-	call neobundle#rc(expand('~/.vim/bundle/'))
+	call neobundle#begin(expand('~/.vim/bundle/'))
 endif
 
 NeoBundle 'Shougo/neocomplcache'
@@ -31,6 +31,8 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'quickrun.vim'
 NeoBundle 'Gist.vim'
 NeoBundle 'QuickBuf'
+
+call neobundle#end()
 
 let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
