@@ -1,4 +1,4 @@
-set nocompatible               " be iMproved
+set nocompatible
 
 set tabstop=2
 set shiftwidth=2
@@ -34,8 +34,19 @@ NeoBundle 'QuickBuf'
 
 call neobundle#end()
 
+set list
+set listchars=tab:>-,nbsp:%,extends:>,precedes:<
+
+let g:qb_hotkey = ";;"
+
 let g:quickrun_config = {}
 let g:quickrun_config['markdown'] = {
   \ 'command': 'bluecloth',
   \ 'exec': '%c -f %s'
   \ }
+
+autocmd BufRead,BufNewFile *.html set filetype=htmlerb.html
+autocmd BufRead,BufNewFile *.html.erb set filetype=htmlerb.html
+autocmd BufRead,BufNewFile *.css.sass set filetype=htmlerb.sass
+autocmd BufRead,BufNewFile *.js.coffee set filetype=coffee.javascript
+autocmd BufRead,BufNewFile *.md set filetype=md.markdown
